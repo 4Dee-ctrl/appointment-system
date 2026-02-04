@@ -1,112 +1,69 @@
 <template>
     <AdminLayout>
-        <div class="space-y-6">
+        <div class="space-y-8">
             <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-semibold text-gray-900">Time Slot Management</h1>
-                <button
-                    @click="openModal()"
-                    class="px-4 py-2 bg-indigo-600 text-white text-sm rounded-md hover:bg-indigo-700"
-                >
-                    Add Time Slot
-                </button>
+                <h1 class="text-[28px] font-semibold text-[#1d1d1f] tracking-tight">Time Slots</h1>
+                <button @click="openModal()" class="btn-primary">Add Time Slot</button>
             </div>
 
-            <div v-if="loading" class="text-center text-gray-500">Loading...</div>
-
-            <div v-else class="bg-white shadow rounded-lg overflow-hidden">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Start Time</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">End Time</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        <tr v-for="slot in adminStore.timeSlots" :key="slot.id">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ slot.start_time }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ slot.end_time }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span
-                                    :class="slot.is_active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'"
-                                    class="px-2 py-1 text-xs font-medium rounded-full"
-                                >
-                                    {{ slot.is_active ? 'Active' : 'Inactive' }}
-                                </span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
-                                <button
-                                    @click="toggleSlot(slot.id)"
-                                    class="text-indigo-600 hover:text-indigo-900"
-                                >
-                                    {{ slot.is_active ? 'Disable' : 'Enable' }}
-                                </button>
-                                <button
-                                    @click="openModal(slot)"
-                                    class="text-blue-600 hover:text-blue-900"
-                                >
-                                    Edit
-                                </button>
-                                <button
-                                    @click="deleteSlot(slot.id)"
-                                    class="text-red-600 hover:text-red-900"
-                                >
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div v-if="loading" class="flex items-center justify-center py-20">
+                <div class="w-8 h-8 border-2 border-[#0071e3] border-t-transparent rounded-full animate-spin"></div>
             </div>
 
-            <div v-if="showModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div class="bg-white rounded-lg p-6 w-full max-w-md">
-                    <h3 class="text-lg font-medium text-gray-900 mb-4">
-                        {{ editingSlot ? 'Edit Time Slot' : 'Add Time Slot' }}
-                    </h3>
-                    <form @submit.prevent="saveSlot" class="space-y-4">
+            <div v-else class="card overflow-hidden">
+                <div class="table-container">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-black/5">
+                                <th class="table-header text-left">Start Time</th>
+                                <th class="table-header text-left">End Time</th>
+                                <th class="table-header text-left">Status</th>
+                                <th class="table-header text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-black/5">
+                            <tr v-for="slot in adminStore.timeSlots" :key="slot.id" class="hover:bg-black/[0.02]">
+                                <td class="px-6 py-4 text-[#1d1d1f]">{{ slot.start_time }}</td>
+                                <td class="px-6 py-4 text-[#1d1d1f]">{{ slot.end_time }}</td>
+                                <td class="px-6 py-4">
+                                    <span :class="slot.is_active ? 'badge badge-active' : 'badge badge-inactive'">
+                                        {{ slot.is_active ? 'Active' : 'Inactive' }}
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <div class="flex justify-end gap-4">
+                                        <button @click="toggleSlot(slot.id)" class="text-sm font-medium text-[#0071e3] hover:underline">
+                                            {{ slot.is_active ? 'Disable' : 'Enable' }}
+                                        </button>
+                                        <button @click="openModal(slot)" class="text-sm font-medium text-[#0071e3] hover:underline">Edit</button>
+                                        <button @click="deleteSlot(slot.id)" class="text-sm font-medium text-[#ff3b30] hover:underline">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div v-if="showModal" class="modal-overlay" @click.self="closeModal">
+                <div class="modal-content">
+                    <h3 class="text-xl font-semibold text-[#1d1d1f] mb-6">{{ editingSlot ? 'Edit Time Slot' : 'Add Time Slot' }}</h3>
+                    <form @submit.prevent="saveSlot" class="space-y-5">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Start Time</label>
-                            <input
-                                v-model="form.start_time"
-                                type="time"
-                                required
-                                class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
+                            <label class="block text-sm font-medium text-[#1d1d1f] mb-2">Start Time</label>
+                            <input v-model="form.start_time" type="time" required class="input-field"/>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">End Time</label>
-                            <input
-                                v-model="form.end_time"
-                                type="time"
-                                required
-                                class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md"
-                            />
+                            <label class="block text-sm font-medium text-[#1d1d1f] mb-2">End Time</label>
+                            <input v-model="form.end_time" type="time" required class="input-field"/>
                         </div>
-                        <div class="flex items-center">
-                            <input
-                                v-model="form.is_active"
-                                type="checkbox"
-                                id="is_active"
-                                class="h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                            />
-                            <label for="is_active" class="ml-2 text-sm text-gray-700">Active</label>
+                        <div class="flex items-center gap-3">
+                            <input v-model="form.is_active" type="checkbox" id="is_active" class="w-5 h-5 rounded border-gray-300 text-[#0071e3] focus:ring-[#0071e3]"/>
+                            <label for="is_active" class="text-sm text-[#1d1d1f]">Active</label>
                         </div>
-                        <div class="flex justify-end space-x-3 pt-4">
-                            <button
-                                type="button"
-                                @click="closeModal"
-                                class="px-4 py-2 border border-gray-300 rounded-md text-sm"
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                type="submit"
-                                class="px-4 py-2 bg-indigo-600 text-white text-sm rounded-md hover:bg-indigo-700"
-                            >
-                                Save
-                            </button>
+                        <div class="flex justify-end gap-3 pt-4">
+                            <button type="button" @click="closeModal" class="btn-secondary">Cancel</button>
+                            <button type="submit" class="btn-primary">Save</button>
                         </div>
                     </form>
                 </div>
@@ -125,11 +82,7 @@ const loading = ref(true);
 const showModal = ref(false);
 const editingSlot = ref(null);
 
-const form = reactive({
-    start_time: '',
-    end_time: '',
-    is_active: true,
-});
+const form = reactive({ start_time: '', end_time: '', is_active: true });
 
 const openModal = (slot = null) => {
     editingSlot.value = slot;
@@ -159,7 +112,7 @@ const saveSlot = async () => {
         }
         closeModal();
     } catch (e) {
-        alert(e.response?.data?.message || 'Failed to save time slot');
+        alert(e.response?.data?.message || 'Failed to save');
     }
 };
 
@@ -167,16 +120,16 @@ const toggleSlot = async (id) => {
     try {
         await adminStore.toggleTimeSlot(id);
     } catch (e) {
-        alert(e.response?.data?.message || 'Failed to toggle time slot');
+        alert(e.response?.data?.message || 'Failed to toggle');
     }
 };
 
 const deleteSlot = async (id) => {
-    if (!confirm('Are you sure you want to delete this time slot?')) return;
+    if (!confirm('Delete this time slot?')) return;
     try {
         await adminStore.deleteTimeSlot(id);
     } catch (e) {
-        alert(e.response?.data?.message || 'Failed to delete time slot');
+        alert(e.response?.data?.message || 'Failed to delete');
     }
 };
 

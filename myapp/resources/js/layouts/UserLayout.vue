@@ -1,45 +1,43 @@
 <template>
-    <div class="min-h-screen bg-gray-100">
-        <nav class="bg-white shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
-                    <div class="flex items-center">
-                        <router-link to="/dashboard" class="text-xl font-semibold text-gray-800">
-                            Appointment System
-                        </router-link>
-                    </div>
-                    <div class="flex items-center space-x-4">
+    <div class="min-h-screen bg-gradient-to-b from-[#f5f5f7] to-white">
+        <nav class="glass sticky top-0 z-40 border-b border-black/5">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex justify-between h-16 items-center">
+                    <router-link to="/dashboard" class="text-xl font-semibold text-[#1d1d1f] tracking-tight">
+                        Appointments
+                    </router-link>
+                    <div class="flex items-center gap-2">
                         <router-link
                             to="/dashboard"
-                            class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-                            :class="{ 'text-indigo-600': $route.name === 'user-dashboard' }"
+                            class="nav-pill"
+                            :class="{ 'active': $route.name === 'user-dashboard' }"
                         >
                             Dashboard
                         </router-link>
                         <router-link
                             to="/appointments"
-                            class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-                            :class="{ 'text-indigo-600': $route.name === 'appointments' }"
+                            class="nav-pill"
+                            :class="{ 'active': $route.name === 'appointments' }"
                         >
                             My Appointments
                         </router-link>
                         <router-link
                             to="/appointments/new"
-                            class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700"
+                            class="btn-primary ml-4"
                         >
                             New Appointment
                         </router-link>
                         <button
                             @click="logout"
-                            class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                            class="nav-pill ml-2"
                         >
-                            Logout
+                            Sign Out
                         </button>
                     </div>
                 </div>
             </div>
         </nav>
-        <main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <main class="max-w-6xl mx-auto px-6 py-10">
             <slot />
         </main>
     </div>

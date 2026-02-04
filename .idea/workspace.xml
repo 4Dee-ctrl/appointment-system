@@ -4,7 +4,167 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46804924-4b74-4f5d-bec6-47e7424337dd" name="Changes" comment="" />
+    <list default="true" id="46804924-4b74-4f5d-bec6-47e7424337dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/carbon" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/carbon.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/patch-type-declarations" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/patch-type-declarations.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/php-parse" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/php-parse.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/phpunit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/phpunit.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/pint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/pint.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/psysh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/psysh.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/sail" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/sail.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/var-dump-server" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/var-dump-server.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/yaml-lint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/bin/yaml-lint.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/brick/math" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/carbonphp/carbon-doctrine-types" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/ClassLoader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/InstalledVersions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/autoload_classmap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/autoload_files.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/autoload_namespaces.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/autoload_psr4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/autoload_real.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/autoload_static.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/installed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/installed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/composer/platform_check.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/dflydev/dot-access-data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/doctrine/inflector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/doctrine/lexer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/dragonmantank/cron-expression" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/egulias/email-validator" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/fakerphp/faker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/filp/whoops" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/fruitcake/php-cors" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/graham-campbell/result-type" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/guzzlehttp/guzzle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/guzzlehttp/promises" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/guzzlehttp/psr7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/guzzlehttp/uri-template" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/hamcrest/hamcrest-php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/laravel/framework" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/laravel/pail" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/laravel/pint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/laravel/prompts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/laravel/sail" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/laravel/serializable-closure" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/laravel/tinker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/league/commonmark" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/league/config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/league/flysystem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/league/flysystem-local" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/league/mime-type-detection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/league/uri" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/league/uri-interfaces" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/mockery/mockery" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/monolog/monolog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/myclabs/deep-copy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/nesbot/carbon" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/nette/schema" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/nette/utils" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/nikic/php-parser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/nunomaduro/collision" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/nunomaduro/termwind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/phar-io/manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/phar-io/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/phpoption/phpoption" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/phpunit/php-code-coverage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/phpunit/php-file-iterator" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/phpunit/php-invoker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/phpunit/php-text-template" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/phpunit/php-timer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/phpunit/phpunit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/psr/clock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/psr/container" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/psr/event-dispatcher" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/psr/http-client" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/psr/http-factory" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/psr/http-message" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/psr/log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/psr/simple-cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/psy/psysh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/ralouphie/getallheaders" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/ramsey/collection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/ramsey/uuid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/cli-parser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/code-unit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/code-unit-reverse-lookup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/comparator" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/complexity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/environment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/exporter" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/global-state" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/lines-of-code" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/object-enumerator" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/object-reflector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/recursion-context" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/type" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/sebastian/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/staabm/side-effects-detector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/clock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/console" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/css-selector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/deprecation-contracts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/error-handler" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/event-dispatcher" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/event-dispatcher-contracts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/finder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/http-foundation" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/http-kernel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/mailer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/mime" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-ctype" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-intl-grapheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-intl-idn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-intl-normalizer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-mbstring" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-php80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-php83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-php84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-php85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/polyfill-uuid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/process" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/routing" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/service-contracts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/string" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/translation" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/translation-contracts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/uid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/var-dumper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/symfony/yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/theseer/tokenizer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/tijsverkoyen/css-to-inline-styles" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/vlucas/phpdotenv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-vue-app/vendor/voku/portable-ascii" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/layouts/AdminLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/layouts/AdminLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/layouts/UserLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/layouts/UserLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/admin/AppointmentsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/admin/AppointmentsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/admin/ConflictsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/admin/ConflictsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/admin/DashboardView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/admin/DashboardView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/admin/DisabledDatesView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/admin/DisabledDatesView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/admin/HistoryView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/admin/HistoryView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/admin/PendingView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/admin/PendingView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/admin/TimeSlotsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/admin/TimeSlotsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/auth/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/auth/LoginView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/auth/RegisterView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/auth/RegisterView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/user/AppointmentsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/user/AppointmentsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/user/DashboardView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/user/DashboardView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/js/views/user/NewAppointmentView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/js/views/user/NewAppointmentView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/resources/views/app.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +179,7 @@
     </persistenceIdMap>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/laravel-vue-app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -42,7 +202,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "v12.11.2",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -73,7 +233,7 @@
       <workItem from="1770132160049" duration="309000" />
       <workItem from="1770132503935" duration="147000" />
       <workItem from="1770172271207" duration="960000" />
-      <workItem from="1770174007271" duration="3952000" />
+      <workItem from="1770174007271" duration="5532000" />
     </task>
     <servers />
   </component>
