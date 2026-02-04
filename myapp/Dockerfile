@@ -37,10 +37,9 @@ RUN npm install && npm run build
 RUN touch /var/www/html/database/database.sqlite \
     && chmod 664 /var/www/html/database/database.sqlite
 
-RUN php artisan config:cache \
-    && php artisan route:cache \
+RUN php artisan route:cache \
     && php artisan view:cache
 
 EXPOSE 10000
 
-CMD php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+CMD php artisan config:cache && php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
