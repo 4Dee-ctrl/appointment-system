@@ -131,6 +131,8 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+@reference "tailwindcss";
+
 .card {
     @apply bg-white rounded-2xl shadow-md;
 }
