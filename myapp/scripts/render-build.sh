@@ -13,3 +13,7 @@ php artisan migrate --force
 
 echo "Seeding database..."
 php artisan db:seed --force
+
+echo "Seeding conflict test data..."
+php artisan db:seed --class=ConflictTestSeeder --force
+
