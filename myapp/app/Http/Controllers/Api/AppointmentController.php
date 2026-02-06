@@ -53,7 +53,7 @@ class AppointmentController extends Controller
             ], 422);
         }
 
-        $isDateDisabled = DisabledDate::where('date', $date)
+        $isDateDisabled = DisabledDate::whereDate('date', $date)
             ->where(function ($query) use ($timeSlot) {
                 $query->whereNull('time_slot_id')
                     ->orWhere('time_slot_id', $timeSlot->id);

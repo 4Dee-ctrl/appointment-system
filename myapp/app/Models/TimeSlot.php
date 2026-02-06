@@ -41,7 +41,7 @@ class TimeSlot extends Model
             return false;
         }
 
-        $isDisabled = DisabledDate::where('date', $date)
+        $isDisabled = DisabledDate::whereDate('date', $date)
             ->where(function ($query) {
                 $query->whereNull('time_slot_id')
                     ->orWhere('time_slot_id', $this->id);
