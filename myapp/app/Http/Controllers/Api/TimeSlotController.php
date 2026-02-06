@@ -29,24 +29,9 @@ class TimeSlotController extends Controller
 
         $date = $validated['date'];
 
-        $isFullDayDisabled = DisabledDate::where('date', $date)
-            ->whereNull('time_slot_id')
-            ->exists();
-
-        if ($isFullDayDisabled) {
-            return response()->json([
-                'available_slots' => [],
-                'message' => 'This date is not available for appointments',
-            ]);
-        }
-
         $timeSlots = TimeSlot::where('is_active', true)
             ->orderBy('start_time')
-            ->get()
-            ->filter(function ($slot) use ($date) {
-                return $slot->isAvailableOn($date);
-            })
-            ->values();
+            ->get();
 
         return response()->json([
             'available_slots' => $timeSlots,

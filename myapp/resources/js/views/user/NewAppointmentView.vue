@@ -11,11 +11,11 @@
                     <svg class="w-5 h-5 text-[#ff9500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                     </svg>
-                    <p class="text-sm text-[#1d1d1f]">You have reached the maximum of 2 pending appointments.</p>
+                    <p class="text-sm text-[#1d1d1f]">Warning: You already have 2 pending appointments.</p>
                 </div>
             </div>
 
-            <div v-else class="card p-8">
+            <div class="card p-8">
                 <form class="space-y-8">
                     <div v-if="error" class="bg-[#ff3b30]/10 text-[#ff3b30] px-4 py-3 rounded-xl text-sm font-medium">
                         {{ error }}
@@ -30,13 +30,11 @@
                             :min="minDate"
                             required
                             @change="handleDateChange"
-                            @input="handleDateInput"
                             class="input-field"
                         />
-                        <p v-if="dateDisabledMessage" class="mt-2 text-sm text-[#ff3b30]">{{ dateDisabledMessage }}</p>
                     </div>
 
-                    <div v-if="form.appointment_date && !dateDisabledMessage">
+                    <div v-if="form.appointment_date">
                         <label class="block text-sm font-medium text-[#1d1d1f] mb-4">Available Time Slots</label>
                         <div v-if="loadingSlots" class="text-center py-8">
                             <div class="w-8 h-8 border-2 border-[#0071e3] border-t-transparent rounded-full animate-spin mx-auto"></div>
@@ -58,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div v-if="form.appointment_date && !dateDisabledMessage">
+                    <div v-if="form.appointment_date">
                         <label class="block text-sm font-medium text-[#1d1d1f] mb-2">Notes (optional)</label>
                         <textarea
                             v-model="form.notes"
@@ -105,36 +103,11 @@ const dateInput = ref(null);
 const loadingSlots = ref(false);
 const submitting = ref(false);
 const error = ref('');
-const dateDisabledMessage = ref('');
 
 const minDate = computed(() => new Date().toISOString().split('T')[0]);
 
-const isDateDisabled = (dateString) => {
-    return appointmentStore.disabledDates.includes(dateString);
-};
-
-const handleDateInput = (event) => {
-    const selectedDate = event.target.value;
-    if (selectedDate && isDateDisabled(selectedDate)) {
-        dateDisabledMessage.value = 'This date is not available for appointments';
-        form.time_slot_id = null;
-        appointmentStore.availableSlots = [];
-    } else {
-        dateDisabledMessage.value = '';
-    }
-};
-
 const handleDateChange = async () => {
     if (!form.appointment_date) return;
-
-    if (isDateDisabled(form.appointment_date)) {
-        dateDisabledMessage.value = 'This date is not available for appointments';
-        form.time_slot_id = null;
-        appointmentStore.availableSlots = [];
-        return;
-    }
-
-    dateDisabledMessage.value = '';
     await loadAvailableSlots();
 };
 
@@ -152,11 +125,6 @@ const loadAvailableSlots = async () => {
 };
 
 const handleSubmit = async () => {
-    if (isDateDisabled(form.appointment_date)) {
-        error.value = 'This date is not available for appointments';
-        return;
-    }
-
     submitting.value = true;
     error.value = '';
     try {
@@ -174,11 +142,6 @@ onMounted(async () => {
         await appointmentStore.fetchAppointments();
     } catch (e) {
         console.error('Failed to fetch appointments:', e);
-    }
-    try {
-        await appointmentStore.fetchDisabledDates();
-    } catch (e) {
-        console.error('Failed to fetch disabled dates:', e);
     }
 });
 </script>
