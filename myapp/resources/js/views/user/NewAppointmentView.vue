@@ -32,6 +32,7 @@
                             @change="handleDateChange"
                             class="input-field"
                         />
+                        <p v-if="isDateDisabled" class="mt-2 text-sm text-[#ff9500]">Warning: This date is disabled by admin. Booking may fail.</p>
                     </div>
 
                     <div v-if="form.appointment_date">
@@ -106,6 +107,11 @@ const error = ref('');
 
 const minDate = computed(() => new Date().toISOString().split('T')[0]);
 
+const isDateDisabled = computed(() => {
+    if (!form.appointment_date) return false;
+    return appointmentStore.disabledDates.includes(form.appointment_date);
+});
+
 const handleDateChange = async () => {
     if (!form.appointment_date) return;
     await loadAvailableSlots();
@@ -142,6 +148,11 @@ onMounted(async () => {
         await appointmentStore.fetchAppointments();
     } catch (e) {
         console.error('Failed to fetch appointments:', e);
+    }
+    try {
+        await appointmentStore.fetchDisabledDates();
+    } catch (e) {
+        console.error('Failed to fetch disabled dates:', e);
     }
 });
 </script>
