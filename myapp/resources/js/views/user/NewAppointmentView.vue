@@ -70,7 +70,11 @@
 
                     <div class="flex justify-end gap-3 pt-4">
                         <router-link to="/appointments" class="btn-secondary">Cancel</router-link>
-                        <button type="submit" :disabled="!form.time_slot_id || submitting" class="btn-primary">
+                        <button
+                            type="submit"
+                            :disabled="!form.time_slot_id || submitting"
+                            class="px-6 py-3 bg-[#0071e3] text-white font-medium rounded-xl hover:bg-[#0077ed] transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                        >
                             <span v-if="submitting">Submitting...</span>
                             <span v-else>Request Appointment</span>
                         </button>
@@ -179,29 +183,65 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-@reference "tailwindcss";
-
 .card {
-    @apply bg-white rounded-2xl shadow-md;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 .input-field {
-    @apply mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+    margin-top: 0.25rem;
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.2);
 }
 
 .time-slot-btn {
-    @apply p-3 text-sm border rounded-md text-center transition-colors;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: white;
+}
+
+.time-slot-btn:hover {
+    border-color: #0071e3;
+    background-color: #f0f7ff;
 }
 
 .time-slot-btn.selected {
-    @apply border-indigo-500 bg-indigo-50 text-indigo-700;
-}
-
-.btn-primary {
-    @apply px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50;
+    border-color: #0071e3;
+    background-color: #e0f0ff;
+    color: #0071e3;
+    font-weight: 500;
 }
 
 .btn-secondary {
-    @apply px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #f9fafb;
 }
 </style>
