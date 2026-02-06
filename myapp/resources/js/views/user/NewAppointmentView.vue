@@ -70,7 +70,7 @@
 
                     <div class="flex justify-end gap-3 pt-4">
                         <router-link to="/appointments" class="btn-secondary">Cancel</router-link>
-                        <button type="submit" :disabled="!form.time_slot_id || submitting || dateDisabledMessage" class="btn-primary">
+                        <button type="submit" :disabled="!form.time_slot_id || submitting" class="btn-primary">
                             <span v-if="submitting">Submitting...</span>
                             <span v-else>Request Appointment</span>
                         </button>
@@ -165,10 +165,16 @@ const handleSubmit = async () => {
 };
 
 onMounted(async () => {
-    await Promise.all([
-        appointmentStore.fetchAppointments(),
-        appointmentStore.fetchDisabledDates()
-    ]);
+    try {
+        await appointmentStore.fetchAppointments();
+    } catch (e) {
+        console.error('Failed to fetch appointments:', e);
+    }
+    try {
+        await appointmentStore.fetchDisabledDates();
+    } catch (e) {
+        console.error('Failed to fetch disabled dates:', e);
+    }
 });
 </script>
 
