@@ -61,9 +61,9 @@ class AppointmentController extends Controller
             ->exists();
 
         if ($isDateDisabled) {
-            $this->logConflict($user->id, $timeSlot->id, $date, 'Date is disabled');
+            $this->logConflict($user->id, $timeSlot->id, $date, 'Time slot is disabled');
             return response()->json([
-                'message' => 'This date is disabled and not available for appointments.',
+                'message' => 'This time slot is disabled and not available for appointments.',
             ], 422);
         }
 

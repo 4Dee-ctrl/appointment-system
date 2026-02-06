@@ -32,7 +32,7 @@
                             @change="handleDateChange"
                             class="input-field"
                         />
-                        <p v-if="isDateDisabled" class="mt-2 text-sm text-[#ff3b30]">This date is disabled and not available for appointments.</p>
+                        <p v-if="isDateDisabled" class="mt-2 text-sm text-[#ff3b30]">This time slot is disabled and not available for appointments.</p>
                     </div>
 
                     <div v-if="form.appointment_date">
