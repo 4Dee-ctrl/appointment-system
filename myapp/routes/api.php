@@ -22,6 +22,7 @@ Route::prefix('auth')->group(function () {
 
 Route::get('/time-slots', [TimeSlotController::class, 'index']);
 Route::get('/time-slots/available', [TimeSlotController::class, 'available']);
+Route::get('/disabled-dates', [TimeSlotController::class, 'disabledDates']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('appointments', AppointmentController::class);

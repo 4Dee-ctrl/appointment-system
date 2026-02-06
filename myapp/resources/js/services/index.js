@@ -32,6 +32,11 @@ export const timeSlotService = {
         const response = await api.get('/time-slots/available', { params: { date } });
         return response.data;
     },
+
+    async getDisabledDates(params = {}) {
+        const response = await api.get('/disabled-dates', { params });
+        return response.data;
+    },
 };
 
 export const appointmentService = {

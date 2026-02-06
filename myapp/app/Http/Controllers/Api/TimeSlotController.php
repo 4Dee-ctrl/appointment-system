@@ -52,4 +52,20 @@ class TimeSlotController extends Controller
             'available_slots' => $timeSlots,
         ]);
     }
+
+    public function disabledDates(Request $request): JsonResponse
+    {
+        $fromDate = $request->input('from_date', now()->toDateString());
+        $toDate = $request->input('to_date', now()->addMonths(3)->toDateString());
+
+        $disabledDates = DisabledDate::whereNull('time_slot_id')
+            ->whereBetween('date', [$fromDate, $toDate])
+            ->pluck('date')
+            ->map(fn($date) => $date->format('Y-m-d'))
+            ->values();
+
+        return response()->json([
+            'disabled_dates' => $disabledDates,
+        ]);
+    }
 }

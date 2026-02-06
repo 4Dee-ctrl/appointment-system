@@ -5,6 +5,7 @@ export const useAppointmentStore = defineStore('appointment', {
     state: () => ({
         appointments: [],
         availableSlots: [],
+        disabledDates: [],
         loading: false,
         error: null,
     }),
@@ -28,6 +29,17 @@ export const useAppointmentStore = defineStore('appointment', {
                 throw error;
             } finally {
                 this.loading = false;
+            }
+        },
+
+        async fetchDisabledDates() {
+            try {
+                const data = await timeSlotService.getDisabledDates();
+                this.disabledDates = data.disabled_dates;
+                return data;
+            } catch (error) {
+                this.error = error.response?.data?.message || 'Failed to fetch disabled dates';
+                throw error;
             }
         },
 

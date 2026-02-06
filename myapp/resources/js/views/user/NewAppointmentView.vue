@@ -24,16 +24,19 @@
                     <div>
                         <label class="block text-sm font-medium text-[#1d1d1f] mb-2">Select Date</label>
                         <input
+                            ref="dateInput"
                             v-model="form.appointment_date"
                             type="date"
                             :min="minDate"
                             required
-                            @change="loadAvailableSlots"
+                            @change="handleDateChange"
+                            @input="handleDateInput"
                             class="input-field"
                         />
+                        <p v-if="dateDisabledMessage" class="mt-2 text-sm text-[#ff3b30]">{{ dateDisabledMessage }}</p>
                     </div>
 
-                    <div v-if="form.appointment_date">
+                    <div v-if="form.appointment_date && !dateDisabledMessage">
                         <label class="block text-sm font-medium text-[#1d1d1f] mb-4">Available Time Slots</label>
                         <div v-if="loadingSlots" class="text-center py-8">
                             <div class="w-8 h-8 border-2 border-[#0071e3] border-t-transparent rounded-full animate-spin mx-auto"></div>
@@ -55,7 +58,7 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div v-if="form.appointment_date && !dateDisabledMessage">
                         <label class="block text-sm font-medium text-[#1d1d1f] mb-2">Notes (optional)</label>
                         <textarea
                             v-model="form.notes"
@@ -67,7 +70,7 @@
 
                     <div class="flex justify-end gap-3 pt-4">
                         <router-link to="/appointments" class="btn-secondary">Cancel</router-link>
-                        <button type="submit" :disabled="!form.time_slot_id || submitting" class="btn-primary">
+                        <button type="submit" :disabled="!form.time_slot_id || submitting || dateDisabledMessage" class="btn-primary">
                             <span v-if="submitting">Submitting...</span>
                             <span v-else>Request Appointment</span>
                         </button>
@@ -93,11 +96,42 @@ const form = reactive({
     notes: '',
 });
 
+const dateInput = ref(null);
 const loadingSlots = ref(false);
 const submitting = ref(false);
 const error = ref('');
+const dateDisabledMessage = ref('');
 
 const minDate = computed(() => new Date().toISOString().split('T')[0]);
+
+const isDateDisabled = (dateString) => {
+    return appointmentStore.disabledDates.includes(dateString);
+};
+
+const handleDateInput = (event) => {
+    const selectedDate = event.target.value;
+    if (selectedDate && isDateDisabled(selectedDate)) {
+        dateDisabledMessage.value = 'This date is not available for appointments';
+        form.time_slot_id = null;
+        appointmentStore.availableSlots = [];
+    } else {
+        dateDisabledMessage.value = '';
+    }
+};
+
+const handleDateChange = async () => {
+    if (!form.appointment_date) return;
+
+    if (isDateDisabled(form.appointment_date)) {
+        dateDisabledMessage.value = 'This date is not available for appointments';
+        form.time_slot_id = null;
+        appointmentStore.availableSlots = [];
+        return;
+    }
+
+    dateDisabledMessage.value = '';
+    await loadAvailableSlots();
+};
 
 const loadAvailableSlots = async () => {
     if (!form.appointment_date) return;
@@ -113,6 +147,11 @@ const loadAvailableSlots = async () => {
 };
 
 const handleSubmit = async () => {
+    if (isDateDisabled(form.appointment_date)) {
+        error.value = 'This date is not available for appointments';
+        return;
+    }
+
     submitting.value = true;
     error.value = '';
     try {
@@ -126,7 +165,10 @@ const handleSubmit = async () => {
 };
 
 onMounted(async () => {
-    await appointmentStore.fetchAppointments();
+    await Promise.all([
+        appointmentStore.fetchAppointments(),
+        appointmentStore.fetchDisabledDates()
+    ]);
 });
 </script>
 
