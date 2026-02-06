@@ -137,7 +137,7 @@ const handleSubmit = async () => {
         await appointmentStore.createAppointment(form);
         router.push('/appointments');
     } catch (e) {
-        error.value = e.response?.data?.message || 'Failed to create appointment';
+        error.value = e.response?.data?.message || 'Failed to create appointment. This date may be disabled.';
     } finally {
         submitting.value = false;
     }
