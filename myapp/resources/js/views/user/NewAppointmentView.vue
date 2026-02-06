@@ -16,7 +16,7 @@
             </div>
 
             <div v-else class="card p-8">
-                <form @submit.prevent="handleSubmit" class="space-y-8">
+                <form class="space-y-8">
                     <div v-if="error" class="bg-[#ff3b30]/10 text-[#ff3b30] px-4 py-3 rounded-xl text-sm font-medium">
                         {{ error }}
                     </div>
@@ -71,7 +71,8 @@
                     <div class="flex justify-end gap-3 pt-4">
                         <router-link to="/appointments" class="btn-secondary">Cancel</router-link>
                         <button
-                            type="submit"
+                            type="button"
+                            @click="handleSubmit"
                             :disabled="!form.time_slot_id || submitting"
                             class="px-6 py-3 bg-[#0071e3] text-white font-medium rounded-xl hover:bg-[#0077ed] transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                         >
