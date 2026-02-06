@@ -32,10 +32,10 @@
                             @change="handleDateChange"
                             class="input-field"
                         />
-                        <p v-if="isDateDisabled" class="mt-2 text-sm text-[#ff9500]">Warning: This date is disabled by admin. Booking may fail.</p>
+                        <p v-if="isDateDisabled" class="mt-2 text-sm text-[#ff3b30]">This date is not available for appointments.</p>
                     </div>
 
-                    <div v-if="form.appointment_date">
+                    <div v-if="form.appointment_date && !isDateDisabled">
                         <label class="block text-sm font-medium text-[#1d1d1f] mb-4">Available Time Slots</label>
                         <div v-if="loadingSlots" class="text-center py-8">
                             <div class="w-8 h-8 border-2 border-[#0071e3] border-t-transparent rounded-full animate-spin mx-auto"></div>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
 
-                    <div v-if="form.appointment_date">
+                    <div v-if="form.appointment_date && !isDateDisabled">
                         <label class="block text-sm font-medium text-[#1d1d1f] mb-2">Notes (optional)</label>
                         <textarea
                             v-model="form.notes"
@@ -72,7 +72,7 @@
                         <button
                             type="button"
                             @click="handleSubmit"
-                            :disabled="!form.time_slot_id || submitting"
+                            :disabled="!form.time_slot_id || submitting || isDateDisabled"
                             class="px-6 py-3 bg-[#0071e3] text-white font-medium rounded-xl hover:bg-[#0077ed] transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                         >
                             <span v-if="submitting">Submitting...</span>
